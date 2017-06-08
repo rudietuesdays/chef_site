@@ -1,0 +1,19 @@
+{
+  "name": "chef_site",
+  "version": "0.0.1",
+  "description": "an online ordering website for a personal chef",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "body-parser": "latest",
+    "mongoose" : "latest",
+    "bcrypt": "^1.0.1",
+    "mongoose-validator": "^1.2.5"
+  }
+}

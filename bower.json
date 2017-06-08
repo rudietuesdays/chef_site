@@ -1,0 +1,24 @@
+{
+  "name": "chef_site",
+  "description": "an online ordering website for a personal chef",
+  "main": "server.js",
+  "authors": [
+    "rae : me[at]raegaines[dot]com"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "angular-cookies": "^1.6.0",
+    "moment": "^2.17.1"
+  }
+}
