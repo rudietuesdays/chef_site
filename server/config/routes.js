@@ -1,6 +1,7 @@
 var users = require('../controllers/users.js')
 module.exports = function(app){
 	app.post('/users', users.create);
+	app.post('/login', users.login);
 	// app.get('/users', users.index);
 	// app.get('/users/:id', users.show)
 	// app.put('/users/:id', users.update);

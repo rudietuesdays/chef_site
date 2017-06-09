@@ -1,8 +1,8 @@
 var app = angular.module('app', ['ngRoute', 'ngCookies']);
 app.config(function ($routeProvider) {
 	$routeProvider
-  .when('/', { templateUrl: 'partials/welcome.html'})
-  .when('/newroute', {templateUrl:'partials/new_page.html'})
+  .when('/', { templateUrl: 'partials/hello.html'})
+  .when('/made', {templateUrl:'partials/made.html'})
   .otherwise({
     redirectTo: '/'
   });
