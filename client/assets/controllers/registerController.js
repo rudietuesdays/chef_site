@@ -15,7 +15,7 @@ app.controller('registerController', ['$scope', '$location', '$cookies', '$route
           var userCookie = $cookies.get('user');
           console.log('user cookie:', userCookie);
           $scope.newUser = {};
-          $location.url('/made');
+          $location.url('/dashboard');
         }
       })
     }

@@ -88,6 +88,22 @@ var UserSchema = new mongoose.Schema({
 		trim: true
 	},
 
-}, {timestamps:true})
+}, {timestamps:true});
 
-mongoose.model('User', UserSchema); //For more information, research mongoose schemas
+// encrypt password
+UserSchema.methods.generateHash = function(password) {
+    return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+};
+
+// check if password is valid
+UserSchema.methods.validPassword = function(password) {
+    return bcrypt.compareSync(password, this.password);
+};
+
+UserSchema.pre('save', function(done) {
+    this.password = this.generateHash(this.password);
+    console.log(this.password);
+    done();
+});
+
+mongoose.model('User', UserSchema);

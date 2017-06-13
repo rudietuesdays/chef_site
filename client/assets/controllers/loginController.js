@@ -1,11 +1,11 @@
 app.controller('loginController', ['$scope', '$location', '$cookies', '$routeParams', 'userFactory', function($scope, $location, $cookies, $routeParams, userFactory){
   console.log('login controller loaded');
 
-  var index = function(){
-    var cookies = $cookies.getAll();
-    console.log('cookies: ', cookies);
-    }
-  index();
+  // var index = function(){
+  //   var cookies = $cookies.getAll();
+  //   console.log('cookies: ', cookies);
+  //   }
+  // index();
 
   $scope.loginUser = function(){
     console.log($scope.user);
@@ -24,7 +24,7 @@ app.controller('loginController', ['$scope', '$location', '$cookies', '$routePar
           var userCookie = $cookies.get('user');
           // console.log(userCookie);
           $scope.user = {};
-          $location.url('/made');
+          $location.url('/dashboard');
         }
       })
     }
