@@ -1,18 +1,51 @@
 var mongoose = require('mongoose');
-var User = mongoose.model('User')
-function UsersController(){
-  this.create = function(req,res){
-    console.log("in users create fx")
-    console.log(req.body)
-    var user = new User(req.body)
-    user.save(function(err, user){
-      console.log("saved user, sending a json response", {err:err, user:user})
-      res.json({err:err, user:user})
-    })
-  };
+var User = mongoose.model('User');
 
-  this.login = function(req, res){
-    console.log("in users login fx");
+console.log('loading users controller...');
+
+module.exports = {
+  create: function(req, res){
+    var user = new User(req.body);
+    user.save(
+      function(err, user){
+        if (err){
+          console.log(err);
+          res.json(err);
+        } else {res.json(user)}
+      }
+    )
+  },
+  
+  login: function(req, res){
+    console.log('in login function');
+    User.findOne({email: req.body.email}, function(err, user){
+      if(!req.body.password){
+        res.json({
+          errors: {
+            login: {
+              message: 'invalid email or password',
+              kind: 'what did not work',
+              path: 'user login',
+              value: 'password error'
+            }
+          }
+        });
+      } else if (user && user.validPassword(req.body.password)) {
+        console.log('user found in db: ', user);
+        res.json({_id: user._id});
+      } else {
+        console.log('what u got', user);
+        res.json({
+          errors: {
+            login: {
+              message: 'invalid email or password',
+              kind: 'what did not work',
+              path: 'user login',
+              value: 'password error'
+            }
+          }
+        });
+      }
+    })
   }
 }
-module.exports = new UsersController();

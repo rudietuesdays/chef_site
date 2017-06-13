@@ -1,7 +1,10 @@
 app.controller('registerController', ['$scope', '$location', '$cookies', '$routeParams', 'userFactory', function($scope, $location, $cookies, $routeParams, userFactory){
   console.log('registration controller loaded');
 
-  $scope.registerUser = function(){
+  $scope.newUser = {};
+  $scope.errors = {};
+
+  $scope.createUser = function(){
     if($scope.newUser.password != $scope.newUser.pw_confirm){
       $scope.pw_error =  "passwords do not match";
     } else {

@@ -1,41 +1,42 @@
 <div ng-controller="registerController">
 	<form ng-submit="createUser()">
 		<h1>Become a client</h1>
-
+		<p style="background-color: red;" ng-if="errors" ng-repeat="error in errors">{{error.message}}</p>
+		<p style="background-color: red;" ng-if="pw_error" >{{pw_error}}</p>
 		<label for="first_name">First name</label>
-		<input type="text" ng-model="newUser.first_name">
+		<input type="text" ng-model="newUser.first_name" required>
 		<br>
 		<label for="last_name">Last name</label>
-		<input type="text" ng-model="newUser.last_name">
+		<input type="text" ng-model="newUser.last_name" required>
 		<br>
 		<label for="email">Email</label>
-		<input type="text" ng-model="newUser.email">
+		<input type="text" ng-model="newUser.email" required>
 		<br>
 		<label for="password">Choose a password</label>
-		<input type="password" ng-model="newUser.password">
+		<input type="password" ng-model="newUser.password" required>
 		<br>
 		<label for="pw_confirm">Re-type your password</label>
-		<input type="password" ng-model="newUser.pw_confirm">
+		<input type="password" ng-model="newUser.pw_confirm" required>
 		<br>
 		<label for="phone">Phone number</label>
-		<input type="text" ng-model="newUser.phone">
+		<input type="text" ng-model="newUser.phone" required>
 		<br>
 		<label for="address">Address</label>
-		<input type="text" placeholder="Street" ng-model="newUser.street1">
+		<input type="text" placeholder="Street" ng-model="newUser.street1" required>
 		<br>
 		<input type="text" ng-model="newUser.street2">
 		<br>
-		<input type="city" placeholder="City" ng-model="newUser.city">
-		<select ng-model="newUser.state">
-			<option disabled="true">State</option>
+		<input type="city" placeholder="City" ng-model="newUser.city" required>
+		<select ng-model="newUser.state" required>
+			<option value="" selected disabled>State</option>
 			<option value="DC">DC</option>
 			<option value="MD">MD</option>
 			<option value="VA">VA</option>
 		</select>
-		<input type="text" placeholder="Zipcode" ng-model="newUser.zip">
+		<input type="text" placeholder="Zipcode" ng-model="newUser.zipcode" required>
 		<br>
 		<label for="family_size">Number of family members to be fed</label>
-		<input type="text" ng-model="newUser.family_size">
+		<input type="text" ng-model="newUser.family_size" required>
 		<br>
 		<label for="allergies">Any food allergies?</label>
 		<textarea ng-model="newUser.allergies" rows="8" cols="80"></textarea>

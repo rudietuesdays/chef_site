@@ -1,12 +1,14 @@
+console.log('loading user model...');
 var mongoose = require('mongoose');
+var bcrypt = require('bcrypt');
 var UserSchema = new mongoose.Schema({
-	first: {
+	first_name: {
       type: String,
       required: [true, 'enter your first name'],
       trim: true,
     },
 
-    last: {
+    last_name: {
       type: String,
       required: [true, 'enter your last name'],
       trim: true
@@ -27,13 +29,13 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, 'enter a password'],
-    minlength: 8,
-    maxlength: 32,
+    minlength: [8, "Password must be at least 8 characters long with 1 number, uppercase and special character"],
+    maxlength: [32, "Password must be at least 8 characters long with 1 number, uppercase and special character"],
     validate: {
       validator: function( value ) {
         return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,32}/.test( value );
       },
-      message: "Password failed validation, you must have at least 1 number, uppercase and special character"
+      message: "Password must be at least 8 characters long with 1 number, uppercase and special character"
     }
   },
 
