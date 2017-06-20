@@ -90,6 +90,11 @@ var UserSchema = new mongoose.Schema({
 		trim: true
 	},
 
+	dietary_restrictions: {
+		type: String,
+		trim: true
+	}
+
 }, {timestamps:true});
 
 // encrypt password

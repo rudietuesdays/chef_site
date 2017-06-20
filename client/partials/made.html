@@ -35,14 +35,17 @@
 		</select>
 		<input type="text" placeholder="Zipcode" ng-model="newUser.zipcode" required>
 		<br>
-		<label for="family_size">Number of family members to be fed</label>
+		<label for="family_size">Family size:</label>
 		<input type="text" ng-model="newUser.family_size" required>
 		<br>
-		<label for="allergies">Any food allergies?</label>
+		<label for="allergies">Food allergies:</label>
 		<textarea ng-model="newUser.allergies" rows="8" cols="80"></textarea>
 		<br>
-		<label for="food_preferences">Food likes, dislikes, and dietary preferences</label>
+		<label for="food_preferences">Food likes/dislikes:</label>
 		<textarea ng-model="newUser.food_preferences" rows="8" cols="80"></textarea>
+		<br>
+		<label for="dietary_restrictions">Dietary preferences:</label>
+		<textarea ng-model="newUser.dietary_restrictions" rows="8" cols="80"></textarea>
 		<br>
 		<input type="submit" value="Register">
 	</form>

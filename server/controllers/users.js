@@ -4,7 +4,17 @@ var User = mongoose.model('User');
 console.log('loading users controller...');
 
 module.exports = {
+  index: function(req, res) {
+    console.log("in user index fx");
+    User.find({})
+    .exec(function(err, users){
+      if(err){console.log(err);}
+      res.json({users});
+    });
+  },
+
   create: function(req, res){
+    console.log("in user create fx");
     var user = new User(req.body);
     user.save(
       function(err, user){
@@ -15,9 +25,9 @@ module.exports = {
       }
     )
   },
-  
+
   login: function(req, res){
-    console.log('in login function');
+    console.log('in user login function');
     User.findOne({email: req.body.email}, function(err, user){
       if(!req.body.password){
         res.json({
@@ -47,5 +57,14 @@ module.exports = {
         });
       }
     })
-  }
+  },
+
+  show: function(req, res){
+    console.log('in user show function');
+    User.findOne({_id: req.params.id},
+    function(err, user){
+      if(err){console.log(err);}
+      res.json(user);
+    })
+  },
 }

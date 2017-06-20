@@ -14,8 +14,8 @@ app.controller('registerController', ['$scope', '$location', '$cookies', '$route
           $scope.errors = data.data.errors
         } else {
           // console.log(data);
-          $cookies.put('user', data.data._id);
-          var userCookie = $cookies.get('user');
+          $cookies.put('uid', data.data._id);
+          var userCookie = $cookies.get('uid');
           console.log('user cookie:', userCookie);
           $scope.newUser = {};
           $location.url('/dashboard');

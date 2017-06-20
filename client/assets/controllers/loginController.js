@@ -20,9 +20,9 @@ app.controller('loginController', ['$scope', '$location', '$cookies', '$routePar
         } else if (data.data == null) {
           $scope.email_error = 'invalid email or password'
         } else {
-          $cookies.put('user', data.data._id);
-          var userCookie = $cookies.get('user');
-          // console.log(userCookie);
+          $cookies.put('uid', data.data._id);
+          var userCookie = $cookies.get('uid');
+          console.log(userCookie);
           $scope.user = {};
           $location.url('/dashboard');
         }

@@ -1,0 +1,29 @@
+<div ng-controller="orderController">
+  <div ng-repeat="user in users">
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>State</th>
+          <th>Family Size</th>
+          <th>Allergies</th>
+          <th>Likes/Dislikes</th>
+          <th>Diet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{user.first_name}}</td>
+          <td>{{user.last_name}}</td>
+          <td>{{user.state}}</td>
+          <td>{{user.family_size}}</td>
+          <td>{{user.allergies}}</td>
+          <td>{{user.food_preferences}}</td>
+          <td>{{user.dietary_restrictions}}</td>
+          <td>{{user.createdAt | date: "MMMM d, yyyy" }}</td>
+        </tr>
+      </tbody>
+    </table>
+	</div>
+</div>

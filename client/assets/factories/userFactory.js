@@ -37,5 +37,23 @@ app.factory('userFactory', ['$http', function($http){
     })
   }
 
+  factory.show = function(uid, callback){
+    $http.get('/users/' + uid)
+    .then(function(returned_data){
+      if(typeof(callback) == 'function'){
+        callback(returned_data);
+      }
+    })
+  }
+
+  factory.showAll = function(callback){
+    $http.get('/users/')
+    .then(function(returned_data){
+      if(typeof(callback) == 'function'){
+        callback(returned_data);
+      }
+    })
+  }
+
   return factory;
 }])
