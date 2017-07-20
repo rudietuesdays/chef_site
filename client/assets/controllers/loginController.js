@@ -3,12 +3,12 @@ app.controller('loginController', ['$scope', '$location', '$cookies', '$routePar
 
   var index = function(){
     var cookies = $cookies.getAll();
-    console.log('cookies: ', cookies);
+    // console.log('cookies: ', cookies);
     }
   index();
 
   $scope.loginUser = function(){
-    console.log($scope.user);
+    // console.log($scope.user);
     if($scope.user == undefined){
       $scope.login_error = "invalid email or password"
     } else {
@@ -22,7 +22,7 @@ app.controller('loginController', ['$scope', '$location', '$cookies', '$routePar
         } else {
           $cookies.put('uid', data.data._id);
           var userCookie = $cookies.get('uid');
-          console.log('user cookie is ', userCookie);
+          // console.log('user cookie is ', userCookie);
           $scope.user = {};
           $location.url('/dashboard');
         }
