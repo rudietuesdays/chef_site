@@ -4,7 +4,8 @@ app.config(function ($routeProvider) {
   .when('/', { templateUrl: 'partials/hello.html'})
 	.when('/made', {templateUrl:'partials/made.html'})
 	.when('/dashboard', {templateUrl:'partials/dashboard.html'})
-  .when('/orders', {templateUrl:'partials/orders.html'})
+	.when('/orders', {templateUrl:'partials/orders.html'})
+  .when('/clients', {templateUrl:'partials/clients.html'})
   .otherwise({
     redirectTo: '/'
   });

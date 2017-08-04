@@ -44,7 +44,7 @@ module.exports = {
         console.log('user found in db: ', user);
         res.json({_id: user._id});
       } else {
-        console.log('what u got', user);
+        console.log('error:', user);
         res.json({
           errors: {
             login: {

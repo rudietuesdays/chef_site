@@ -21,12 +21,12 @@ app.controller('orderController', ['$scope', '$location', '$cookies', '$routePar
     //     })
     //   };
 
-      var showUsers = function(){
-        userFactory.showAll(function(data){
-          $scope.users = data.data.users;
-          console.log('all the users:', data.data.users);
-        })
-      }
+      // var showUsers = function(){
+      //   userFactory.showAll(function(data){
+      //     $scope.users = data.data.users;
+      //     console.log('all the users:', data.data.users);
+      //   })
+      // }
 
       // var showItems = function(id){
       //   itemFactory.index(id, function(data){
@@ -37,7 +37,7 @@ app.controller('orderController', ['$scope', '$location', '$cookies', '$routePar
 
 
       // showUser(userCookie);
-      showUsers();
+      // showUsers();
       // showItems($cookies.get('uid'));
     }
   // }
